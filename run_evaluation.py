@@ -97,5 +97,5 @@ if __name__ == "__main__":
             method_name_saveable = f"{args.method}_{args.ablation}_{args.level}"
             output_path = os.path.join(args.output_dir, method_name_saveable)
             os.makedirs(output_path, exist_ok=True)
-            with open(f"{output_path}/{task}_{model_name}_{args.split}_abs-{args.absolute}.pkl", 'wb') as f:
+            with open(f"{output_path}/{task.replace('_', '-')}_{model_name}_{args.split}_abs-{args.absolute}.pkl", 'wb') as f:
                 pickle.dump(d, f)
