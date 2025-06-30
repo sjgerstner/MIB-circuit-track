@@ -79,7 +79,7 @@ if __name__ == "__main__":
         method_path = os.path.join(args.output_dir, method_name)
         for results_file in os.listdir(method_path):
             task, model, split, abs = os.path.splitext(results_file)[0].split("_")
-            if f"{task}_{model}" not in COL_MAPPING:
+            if (f"{task}_{model}" not in COL_MAPPING) or model=='interpbench':
                 continue
             if split != args.split:
                 continue
